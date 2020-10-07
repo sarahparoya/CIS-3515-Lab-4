@@ -17,15 +17,14 @@ public class CanvasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
 
-        setTitle("Canvas Activity");
-
         final Intent receivedIntent = getIntent();
-        textView = findViewById(R.id.textView);
-        String name = receivedIntent.getStringExtra("name");
 
-        textView.setText(name);
-        ConstraintLayout constraintLayout = findViewById(R.id.textColor);
-        constraintLayout.setBackgroundColor(Color.parseColor(getIntent().getStringExtra("color")));
+        String color = receivedIntent.getStringExtra("color");
+        final ConstraintLayout canvasConstraint = (ConstraintLayout) findViewById(R.id.textColor);
+
+        canvasConstraint.setBackgroundColor(Color.parseColor((color)));
+        TextView messageTextView = findViewById(R.id.textView);
+        messageTextView.setText(color);
 
 
     }

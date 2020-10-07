@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Spinner;
 
-public class PaletteActivity extends AppCompatActivity {
+public class PaletteActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,8 @@ public class PaletteActivity extends AppCompatActivity {
                 intent.putExtra("color", colors[position]);
                 //launch the intent
                 startActivity(intent);
+
+
             }
         });
     }

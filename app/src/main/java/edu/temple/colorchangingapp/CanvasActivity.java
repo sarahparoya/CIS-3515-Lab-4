@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class CanvasActivity extends AppCompatActivity {
+public class CanvasActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

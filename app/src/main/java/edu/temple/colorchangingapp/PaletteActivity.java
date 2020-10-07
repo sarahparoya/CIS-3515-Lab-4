@@ -12,12 +12,15 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Spinner;
 
-public class PaletteActivity extends Activity {
+public class PaletteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setTitle("Palette Activity");
+
 
         Resources res = getResources();
         final String[] colors = res.getStringArray(R.array.Colors);

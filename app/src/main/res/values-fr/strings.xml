@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="Colors">
+        <item>Blanche</item>
+        <item>Bordeaux</item>
+        <item>Rouge</item>
+        <item>Jaune</item>
+        <item>Olive</item>
+        <item>Verte</item>
+        <item>Sarcelle</item>
+        <item>Aqua</item>
+        <item>Bleue</item>
+        <item>Magenta</item>
+        <item>Violette</item>
+        <item>Grise</item>
+    </string-array>
+</resources>

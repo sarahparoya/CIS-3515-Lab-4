@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Color Changing App</string>
     <string-array name="Colors">
+
         <item>White</item>
         <item>Maroon</item>
         <item>Red</item>
@@ -13,5 +14,6 @@
         <item>Magenta</item>
         <item>Purple</item>
         <item>Gray</item>
+
     </string-array>
 </resources>

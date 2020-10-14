@@ -23,10 +23,11 @@ public class PaletteActivity extends AppCompatActivity {
 
 
         Resources res = getResources();
-        final String[] colors = res.getStringArray(R.array.Colors);
+        final String[] english = res.getStringArray(R.array.color_names);
+        final String[] french = res.getStringArray(R.array.color_select);
 
 
-        ColorAdapter colorAdapter = new ColorAdapter(this, colors);
+        ColorAdapter colorAdapter = new ColorAdapter(this, english, french);
 
         //this is the gridView in the layout
         GridView gridView = findViewById(R.id.gridView);
@@ -39,7 +40,7 @@ public class PaletteActivity extends AppCompatActivity {
                 //create the intent
                 Intent intent = new Intent(PaletteActivity.this, CanvasActivity.class);
                 //put string into the extra with the key: color
-                intent.putExtra("color", colors[position]);
+                intent.putExtra("color", (String) english[position]);
                 //launch the intent
                 startActivity(intent);
 

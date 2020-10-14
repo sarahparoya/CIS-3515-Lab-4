@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="Colors">
+    <string-array
+        name="color_names">
+        <item>White</item>
+        <item>Maroon</item>
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Olive</item>
+        <item>Green</item>
+        <item>Teal</item>
+        <item>Aqua</item>
+        <item>Blue</item>
+        <item>Magenta</item>
+        <item>Purple</item>
+        <item>Gray</item>
+    </string-array>
+
+    <string-array name="color_select">
         <item>Blanche</item>
         <item>Bordeaux</item>
         <item>Rouge</item>
@@ -15,4 +31,6 @@
         <item>Violette</item>
         <item>Grise</item>
     </string-array>
+
+
 </resources>

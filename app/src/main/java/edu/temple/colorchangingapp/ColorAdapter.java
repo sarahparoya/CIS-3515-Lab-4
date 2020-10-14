@@ -12,10 +12,12 @@ import android.widget.TextView;
 public class ColorAdapter extends BaseAdapter {
     String[] colors;
     Context context;
+    String[] display;
 
-    public ColorAdapter (Context context, String[] colors){
+    public ColorAdapter (Context context, String[] colors, String[] display){
         this.colors = colors;
         this.context = context;
+        this.display = display;
     }
 
     @Override
@@ -36,7 +38,7 @@ public class ColorAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View view, ViewGroup parent) {
         TextView textView = new TextView(context);
-        textView.setText(colors[position]);
+        textView.setText(display[position]);
         textView.setTextSize(20);
         textView.setHeight(125);
         textView.setWidth(250);

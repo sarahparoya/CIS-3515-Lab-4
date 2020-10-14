@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Color Changing App</string>
-    <string-array name="Colors">
-
+    <string-array name="color_names">
         <item>White</item>
         <item>Maroon</item>
         <item>Red</item>
@@ -14,6 +13,21 @@
         <item>Magenta</item>
         <item>Purple</item>
         <item>Gray</item>
+    </string-array>
 
+
+    <string-array name="color_select">
+        <item>White</item>
+        <item>Maroon</item>
+        <item>Red</item>
+        <item>Yellow</item>
+        <item>Olive</item>
+        <item>Green</item>
+        <item>Teal</item>
+        <item>Aqua</item>
+        <item>Blue</item>
+        <item>Magenta</item>
+        <item>Purple</item>
+        <item>Gray</item>
     </string-array>
 </resources>

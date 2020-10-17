@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class PaletteActivity extends AppCompatActivity {
 
@@ -41,6 +42,10 @@ public class PaletteActivity extends AppCompatActivity {
                 Intent intent = new Intent(PaletteActivity.this, CanvasActivity.class);
                 //put string into the extra with the key: color
                 intent.putExtra("color", (String) english[position]);
+
+                TextView colorView = (TextView)view;
+
+                intent.putExtra(getResources().getString(R.string.color_value), colorView.getText());
                 //launch the intent
                 startActivity(intent);
 

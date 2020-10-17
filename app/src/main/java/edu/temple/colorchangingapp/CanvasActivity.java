@@ -22,11 +22,22 @@ public class CanvasActivity extends AppCompatActivity {
         final Intent receivedIntent = getIntent();
 
         String color = receivedIntent.getStringExtra("color");
+
+        String name = receivedIntent.getStringExtra(getResources().getString(R.string.color_value));
+
+
+
         final ConstraintLayout canvasConstraint = (ConstraintLayout) findViewById(R.id.textColor);
 
+
         canvasConstraint.setBackgroundColor(Color.parseColor((color)));
+
         TextView messageTextView = findViewById(R.id.textView);
-        messageTextView.setText(color);
+
+        messageTextView.setText(name);
+
+
+
 
 
     }

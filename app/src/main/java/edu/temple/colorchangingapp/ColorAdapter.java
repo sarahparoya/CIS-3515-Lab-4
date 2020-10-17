@@ -18,6 +18,7 @@ public class ColorAdapter extends BaseAdapter {
         this.colors = colors;
         this.context = context;
         this.display = display;
+        this.display = context.getResources().getStringArray(R.array.color_select);
     }
 
     @Override

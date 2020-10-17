@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">Color Changing App</string>
+    <string name="app_name" translatable="false">Color Changing App</string>
+
+    <string name="color_name">colorName</string>
+    <string name="color_value">colorValue</string>
+
     <string-array name="color_names">
         <item>White</item>
         <item>Maroon</item>

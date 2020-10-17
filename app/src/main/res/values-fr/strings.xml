@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="color_name">colorName</string>
+    <string name="color_value">colorValue</string>
+
     <string-array
         name="color_names">
         <item>White</item>

@@ -20,10 +20,10 @@ public class PaletteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setTitle("Palette Activity");
+        setTitle("Main Activity");
 
 
-        Resources res = getResources();
+      /*  Resources res = getResources();
         final String[] english = res.getStringArray(R.array.color_names);
         final String[] french = res.getStringArray(R.array.color_select);
 
@@ -39,7 +39,7 @@ public class PaletteActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //create the intent
-                Intent intent = new Intent(PaletteActivity.this, CanvasActivity.class);
+                Intent intent = new Intent(PaletteActivity.this, );
                 //put string into the extra with the key: color
                 intent.putExtra("color", (String) english[position]);
 
@@ -51,6 +51,6 @@ public class PaletteActivity extends AppCompatActivity {
 
 
             }
-        });
+        });*/
     }
 }

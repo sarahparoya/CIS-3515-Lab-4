@@ -1,5 +1,6 @@
 package edu.temple.colorchangingapp;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -9,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextClock;
 import android.widget.TextView;
 
 public class CanvasFragment extends Fragment {
@@ -17,18 +17,23 @@ public class CanvasFragment extends Fragment {
     private static final String ANDROID_COLORS = "android_colors";
     private static final String POSITION = "position";
 
+    private static final String COLOR_VALUE = "color_select";
+
+
     private String[] androidColors;
     private int position;
+    private String[] french;
 
     public CanvasFragment() {
         // Required empty public constructor
     }
 
-    public static CanvasFragment newInstance(String[] androidColors, int position) {
+    public static CanvasFragment newInstance(String[] androidColors, int position, String[] french) {
         CanvasFragment fragment = new CanvasFragment();
         Bundle args = new Bundle();
         args.putStringArray(ANDROID_COLORS, androidColors);
         args.putInt(POSITION, position);
+        args.putStringArray(COLOR_VALUE, french);
         fragment.setArguments(args);
         return fragment;
     }
@@ -39,6 +44,8 @@ public class CanvasFragment extends Fragment {
         if (getArguments() != null) {
             androidColors = getArguments().getStringArray(ANDROID_COLORS);
             position = getArguments().getInt(POSITION);
+            french = getArguments().getStringArray(COLOR_VALUE);
+
         }
     }
 
@@ -55,16 +62,16 @@ public class CanvasFragment extends Fragment {
         TextView colorName = l.findViewById(R.id.colorName);
         frameLayout.setBackgroundColor(Color.parseColor(androidColors[this.position]));
 
-        colorName.setText(androidColors[position]);
+        colorName.setText(french[this.position]);
 
         return l;
     }
 
     public void onColorSelected(int position){
         this.position = position;
-        updateBackgroudColor();
+        updateBackgroundColor();
     }
-    private void updateBackgroudColor(){
+    private void updateBackgroundColor(){
         FrameLayout frameLayout = getView().findViewById(R.id.container_canvas);
         frameLayout.setBackgroundColor(Color.parseColor(androidColors[this.position]));
     }

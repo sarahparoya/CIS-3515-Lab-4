@@ -62,7 +62,8 @@ public class PaletteActivity extends AppCompatActivity implements PaletteFragmen
     @Override
     public void onColorSelected(int position) {
         final String[] aColors = getResources().getStringArray(R.array.color_names);
-        CanvasFragment canvasFragment = CanvasFragment.newInstance(aColors, position);
+        final String[] colorNames = getResources().getStringArray(R.array.color_select);
+        CanvasFragment canvasFragment = CanvasFragment.newInstance(aColors, position, colorNames);
 
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.container_2, canvasFragment)

@@ -1,6 +1,8 @@
 package edu.temple.colorchangingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -21,19 +23,27 @@ public class PaletteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setTitle("Main Activity");
+        PaletteFragment pf = new PaletteFragment();
+
+        PaletteFragment pf2 = new PaletteFragment();
+
+        FragmentManager fm = getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+
+       // ft.add(R.id.container_1, pf).commit();
+
+        ft.add(R.id.container_2, pf2).commit();
+
+
 
 
       /*  Resources res = getResources();
         final String[] english = res.getStringArray(R.array.color_names);
         final String[] french = res.getStringArray(R.array.color_select);
-
-
         ColorAdapter colorAdapter = new ColorAdapter(this, english, french);
-
         //this is the gridView in the layout
         GridView gridView = findViewById(R.id.gridView);
         gridView.setAdapter(colorAdapter);
-
         //when item is clicked
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -42,14 +52,10 @@ public class PaletteActivity extends AppCompatActivity {
                 Intent intent = new Intent(PaletteActivity.this, );
                 //put string into the extra with the key: color
                 intent.putExtra("color", (String) english[position]);
-
                 TextView colorView = (TextView)view;
-
                 intent.putExtra(getResources().getString(R.string.color_value), colorView.getText());
                 //launch the intent
                 startActivity(intent);
-
-
             }
         });*/
     }

@@ -15,7 +15,7 @@ import android.widget.GridView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class PaletteActivity extends AppCompatActivity {
+public class PaletteActivity extends AppCompatActivity implements PaletteFragment.OnColorSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +23,19 @@ public class PaletteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setTitle("Main Activity");
-        PaletteFragment pf = new PaletteFragment();
+        final String[] aColors = getResources().getStringArray(R.array.color_names);
+        final String[] colorNames = getResources().getStringArray(R.array.color_select);
 
-        PaletteFragment pf2 = new PaletteFragment();
+        PaletteFragment pf = PaletteFragment.newInstance(aColors, colorNames);
+        getSupportFragmentManager().beginTransaction()
+                .add(R.id.container_2, pf)
+                .commit();
 
+       /* PaletteFragment pf = new PaletteFragment();
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
 
-       // ft.add(R.id.container_1, pf).commit();
-
-        ft.add(R.id.container_2, pf2).commit();
-
-
-
+        ft.add(R.id.container_2, pf).commit();*/
 
       /*  Resources res = getResources();
         final String[] english = res.getStringArray(R.array.color_names);
@@ -58,5 +58,15 @@ public class PaletteActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });*/
+    }
+    @Override
+    public void onColorSelected(int position) {
+        final String[] aColors = getResources().getStringArray(R.array.color_names);
+        CanvasFragment canvasFragment = CanvasFragment.newInstance(aColors, position);
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.container_2, canvasFragment)
+                .addToBackStack(null)
+                .commit();
     }
 }
